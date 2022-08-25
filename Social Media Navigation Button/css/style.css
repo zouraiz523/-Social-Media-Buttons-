@@ -1,0 +1,99 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+body {  
+  background-image:url('https://blogger.googleusercontent.com/img/a/AVvXsEgDJcn8Puu5zMs2exCRulkP0EFYBxAEGLWS4dp55iDmASxbohY382Eeg6Xo_BfodH6UjiQpCvauwrQQuLSoLfunh8YxKA6E2HIzmn9JVo-v8-1UvrRNWpvQKomPAx1jZ6vqklQBBTKQCPawIy-dzlV237PlsszhYkCzMKzwunc5Xz0K4IMOrVhzAjdA');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+.container {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+}
+.media-icons {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 3px;
+  padding: 1em;
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: translateX(-100%);
+  transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.close-btn.open ~ .media-icons {
+  transform: translateX(0);
+}
+.media-icons a {
+  text-decoration: none;
+  position: relative;
+  height: 40px;
+  width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  margin: 4px;
+}
+.media-icons a i {
+  color: #fff;
+}
+.media-icons a .tooltip {
+  position: absolute;
+  left: 55px;
+  font-size: 15px;
+  font-family: cursive;
+  pointer-events: none;
+  background-color: rgba(255, 255, 265, 1.5);
+  padding: 3px 8px;
+  border-radius: 5px;
+  transform: translateY(-25px);
+  opacity: 0;
+  transition: all 0.2s linear;
+}
+a:hover .tooltip {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+a .tooltip::before {
+  content: "";
+  position: absolute;
+  height: 11px;
+  width: 11px;
+  top: 50%;
+  left: -5px;
+  transform: translateY(-50%) rotate(45deg);
+  background-color: #fff;
+}
+.close-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 45px;
+  width: 45px;
+  border-radius: 50%;
+  color: #eee;
+  font-size: 18px;
+  margin-top:10px;
+  background-color: #4092f6;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  transform: rotate(45deg);
+  transition: all .4s cubic-bezier(0.68, -0.55, .265, 1.55);
+}
+.close-btn.open {
+  transform: rotate(90deg);
+  background-color: #ff000d;
+}
